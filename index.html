@@ -1,134 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Montserrat:900">
-    <title>Document</title>
-    <style>
-
-body{
-    background-color: white;
-}
-  
-#timer {
-  color: #000000;
-  text-align: center;
-  text-transform: uppercase;
-  font-family: 'Lato', sans-serif;
-  font-size: .7em;
-  letter-spacing: 5px;
-}
-
-.days, .hours, .minutes, .seconds {
-  display: inline-block;
-  padding: 20px;
-  width: 100px;
-  border-radius: 5px;
-}
-
-.days {
-  background: #D3D3D3;
-}
-
-.hours {
-  background: #A9A9A9;
-  color: #000000;
-}
-
-.minutes {
-  background: #D3D3D3;
-}
-
-.seconds {
-  background: #A9A9A9;
-}
-
-.numbers {
-  font-family: 'Montserrat', sans-serif;
-  color:  #000000;
-  font-size: 4em;
-  text-align: center;
-}
-
-.white {
-  position: absolute;
-  background:  #eeeeee;
-  height: 85px;
-  width: 75px;
-  left: 30%;
-  top: 2%;
-}
-
-.red {
-  position: absolute;
-  background:  #EF2F3C;
-  left: 18%;
-  top: 9%;
-  height: 65px;
-  width: 70px;
- 
-}
-
-.blue {
-  position: absolute;
-  background:  #276FBF;
-  height: 80px;
-  width: 80px;
-  left: 60%;
-  top: 5%;
-
-
-}
-
-
-    </style>
-</head>
-<body>
-    
-<div id="timer">
-
-    <div class="days"> 
-        <div id="days" class="numbers "> </div>days</div> 
-      <div class="hours"> 
-        <div  id="hours" class="numbers"> </div>hours</div> 
-      <div class="minutes"> 
-        <div  id="minutes" class="numbers"> </div>minutes</div> 
-      <div   class="seconds"> 
-        <div id="seconds" class="numbers"> </div>seconds</div> 
-      </div>
-
-</div>
-
-</body>
-<script>
-    const year = new Date().getFullYear();
-const myDate = new Date('Oct 2, 2021 00:00:00');
-console.log(myDate);
-
-// countdown
-let timer = setInterval(function() {
-
-  // get today's date
-  const today = new Date().getTime();
-
-  // get the difference
-  const diff = myDate - today;
-
-  // math
-  let days = Math.floor(diff / (1000 * 60 * 60 * 24));
-  let hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  let minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-  let seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-  // display
-  document.getElementById("days").innerHTML=days
-  document.getElementById("hours").innerHTML=hours
-  document.getElementById("minutes").innerHTML=minutes
-  document.getElementById("seconds").innerHTML=seconds
-
-
-
-}, 1);
-</script>
-</html>
+<html>
+    <head>
+        <meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/>
+        <meta name="next-head-count" content="2"/><link rel="preload" href="/_next/static/css/a26bca5f46991f8af3a9.css" as="style"/>
+        <link rel="stylesheet" href="/_next/static/css/a26bca5f46991f8af3a9.css" data-n-g=""/>
+        <link rel="preload" href="/_next/static/css/0f5e2ea6b6ca2df753dc.css" as="style"/>
+        <link rel="stylesheet" href="/_next/static/css/0f5e2ea6b6ca2df753dc.css" data-n-p=""/>
+        <noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-b69b38e0e606287ba003.js">
+        </script><script src="/_next/static/chunks/webpack-2168749b2b51a5835898.js" defer="">
+        </script><script src="/_next/static/chunks/framework-0bde067059066b5d3e1b.js" defer="">
+        </script><script src="/_next/static/chunks/main-4f5a6b24ff6c42366de9.js" defer="">
+        </script><script src="/_next/static/chunks/pages/_app-880066215d546f6c82a5.js" defer="">
+        </script><script src="/_next/static/chunks/pages/widgets/live/quotes/%5BquotePrefsId%5D-1423d3b5ca16289a03ed.js" defer="">
+        </script><script src="/_next/static/3LRL91s7Z0Gh41nXRcJSK/_buildManifest.js" defer="">
+        </script><script src="/_next/static/3LRL91s7Z0Gh41nXRcJSK/_ssgManifest.js" defer="">
+        </script></head><body><div id="__next"><div id="container" class="quotes_container__qcOqH"><style>
+					
+					
+	</style>
+    <div style="width:0;height:0;background-image:url(https://firebasestorage.googleapis.com/v0/b/notion-widgets.appspot.com/o/quotes%2Fquoteoftheday%2F4.jpg?alt=media&amp;token=3d675ba5-bb2f-498f-bc8a-5e471da72246);background-position:center;background-size:contain;background-repeat:no-repeat" class="quotes_wrapper__23ynh">
+    <button id="refresh_button" class="quotes_refreshBtn__eahBG" style="display:none">
+    <img id="refresh_icon" src="/refresh-btn.svg" alt="Load New Quote" class="quotes_refreshIcon__2-d4o"/>
+    </button></div></div><div class="Toastify"></div><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5HGC94H" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"imageSrc":"https://firebasestorage.googleapis.com/v0/b/notion-widgets.appspot.com/o/quotes%2Fquoteoftheday%2F4.jpg?alt=media\u0026token=3d675ba5-bb2f-498f-bc8a-5e471da72246","widgetPrefs":{"dateCreated":"2022-04-11T06:07:49.523Z","fileNumber":28,"darkMode":false,"title":"Untitled","uid":"egdTqpGpMjZfLPz2FTM0iGeJWdU2","lastViewed":"2022-05-06T17:02:51.035Z","customAccount":"","setBackgroundColor":false,"hideRefreshIcon":false,"account":"quoteoftheday","darkModeHoverBar":true,"backgroundColor":"#ffffff","allowDuplication":false,"showCustomizeButton":true}},"urlInfo":{"protocol":"https:","host":"indify.co","origin":"https://indify.co"},"envVars":{"googleApiKey":"AIzaSyDTMMsTlg93L-xYciFeS4oeGFJ9ulhUQmM"}},"page":"/widgets/live/quotes/[quotePrefsId]","query":{"quotePrefsId":"bhdbbG2jVnXvYezVYOjs"},"buildId":"3LRL91s7Z0Gh41nXRcJSK","runtimeConfig":{},"isFallback":false,"gip":true,"appGip":true,"scriptLoader":[]}</script></body></html>
