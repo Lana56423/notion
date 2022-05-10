@@ -1,31 +1,146 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/>
-        <meta name="next-head-count" content="2"/><link rel="preload" href="/_next/static/css/a26bca5f46991f8af3a9.css" as="style"/>
-        <link rel="stylesheet" href="/_next/static/css/a26bca5f46991f8af3a9.css" data-n-g=""/>
-        <link rel="preload" href="/_next/static/css/0f5e2ea6b6ca2df753dc.css" as="style"/>
-        <link rel="stylesheet" href="/_next/static/css/0f5e2ea6b6ca2df753dc.css" data-n-p=""/>
-        <noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-b69b38e0e606287ba003.js">
-        </script><script src="/_next/static/chunks/webpack-2168749b2b51a5835898.js" defer="">
-        </script><script src="/_next/static/chunks/framework-0bde067059066b5d3e1b.js" defer="">
-        </script><script src="/_next/static/chunks/main-4f5a6b24ff6c42366de9.js" defer="">
-        </script><script src="/_next/static/chunks/pages/_app-880066215d546f6c82a5.js" defer="">
-        </script><script src="/_next/static/chunks/pages/widgets/live/quotes/%5BquotePrefsId%5D-1423d3b5ca16289a03ed.js" defer="">
-        </script><script src="/_next/static/3LRL91s7Z0Gh41nXRcJSK/_buildManifest.js" defer="">
-        </script><script src="/_next/static/3LRL91s7Z0Gh41nXRcJSK/_ssgManifest.js" defer="">
-        </script></head><body><div id="__next"><div id="container" class="quotes_container__qcOqH">
-	<style>			
-	</style>
-    <div style="width:0;height:0;background-image:url(https://i.pinimg.com/originals/db/f8/a2/dbf8a2a7e5461c01c69c67dcefcf21fa.jpg;token=3d675ba5-bb2f-498f-bc8a-5e471da72246);background-position:center;background-size:contain;background-repeat:no-repeat" class="quotes_wrapper__23ynh">
-    <button id="refresh_button" class="quotes_refreshBtn__eahBG" style="display:none">
-    <img id="refresh_icon" src="/refresh-btn.svg" alt="Load New Quote" class="quotes_refreshIcon__2-d4o"/>
-    </button>
-	</div>
-	</div>
-	<div class="Toastify">
-	</div><noscript>
-	<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5HGC94H" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"imageSrc":"https://firebasestorage.googleapis.com/v0/b/notion-widgets.appspot.com/o/quotes%2Fquoteoftheday%2F4.jpg?alt=media\u0026token=3d675ba5-bb2f-498f-bc8a-5e471da72246","widgetPrefs":{"dateCreated":"2022-04-11T06:07:49.523Z","fileNumber":28,"darkMode":false,"title":"Untitled","uid":"egdTqpGpMjZfLPz2FTM0iGeJWdU2","lastViewed":"2022-05-06T17:02:51.035Z","customAccount":"","setBackgroundColor":false,"hideRefreshIcon":false,"account":"quoteoftheday","darkModeHoverBar":true,"backgroundColor":"#ffffff","allowDuplication":false,"showCustomizeButton":true}},"urlInfo":{"protocol":"https:","host":"indify.co","origin":"https://indify.co"},"envVars":{"googleApiKey":"AIzaSyDTMMsTlg93L-xYciFeS4oeGFJ9ulhUQmM"}},"page":"/widgets/live/quotes/[quotePrefsId]","query":{"quotePrefsId":"bhdbbG2jVnXvYezVYOjs"},"buildId":"3LRL91s7Z0Gh41nXRcJSK","runtimeConfig":{},"isFallback":false,"gip":true,"appGip":true,"scriptLoader":[]}
-</script>
-	</body>
+  <head>
+    <title>Изображения из слайд-шоу</title>
+    <style>
+      * {box-sizing: border-box}
+      body {
+      font-family: Verdana, sans-serif;
+      margin:0}
+      .mySlides {display: none}
+      img {vertical-align: middle;}
+      .slideshow-container {
+      max-width: 1000px;
+      position: relative;
+      margin: auto;
+      }
+      /* Кнопки next & previous*/
+      .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      margin-top: -22px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+      }
+      /* Измените положение "next button" */
+      .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+      }
+      /* Добавьте черный фоновый цвет с небольшой прозрачностью*/
+      .prev:hover, .next:hover {
+      background-color: rgba(0,0,0,0.8);
+      }
+      /* Подпись под изображением */
+      .text {
+      color: #ffffff;
+      font-size: 15px;
+      padding: 8px 12px;
+      position: absolute;
+      bottom: 8px;
+      width: 100%;
+      text-align: center;
+      }
+      /* Number text (1/3 etc) */
+      .numbertext {
+      color: #ffffff;
+      font-size: 12px;
+      padding: 8px 12px;
+      position: absolute;
+      top: 0;
+      }
+      /* Точки/маркеры/указатели */
+      .dot {
+      cursor: pointer;
+      height: 15px;
+      width: 15px;
+      margin: 0 2px;
+      background-color: #999999;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+      }
+      .active, .dot:hover {
+      background-color: #111111;
+      }
+      /* Выцветание анимации */
+      .fade {
+      -webkit-animation-name: fade;
+      -webkit-animation-duration: 1.5s;
+      animation-name: fade;
+      animation-duration: 1.5s;
+      }
+      @-webkit-keyframes fade {
+      from {opacity: .4} 
+      to {opacity: 1}
+      }
+      @keyframes fade {
+      from {opacity: .4} 
+      to {opacity: 1}
+      }
+      /* Для маленьких экранов увеличьте размер текста */
+      @media only screen and (max-width: 300px) {
+      .prev, .next,.text {font-size: 11px}
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slideshow-container">
+      <div class="mySlides fade">
+        <div class="numbertext">1 / 3</div>
+        <img src="https://sun9-22.userapi.com/s/v1/ig2/LBFO_ZiXqPd1tgzWXFOzd5GMmd0YcEd48d_g9oDJdBnECQ1Dvm86evM3KJZ-nznpypjk1_7P4VjLKhgZZAqt1LE5.jpg?size=596x720&quality=96&type=album" style="width:100%">
+      </div>
+      <div class="mySlides fade">
+        <div class="numbertext">2 / 3</div>
+        <img src="https://sun9-58.userapi.com/s/v1/ig2/jIC4XWqyM3n3XUDPTTIhDZTTz4U5fewvhdS-hVbBWsKz_rruX0sDgFHDya5D8kZNCSpu9vxcANhDeifTL5E9sVIc.jpg?size=720x645&quality=96&type=album" style="width:100%">
+        </div>
+      <div class="mySlides fade">
+        <div class="numbertext">3 / 3</div>
+        <img src="https://sun9-86.userapi.com/s/v1/ig2/L8CJHmbaQcBpegGQQ24e6U5j2whri-j2GU1QAUJZUQ_VRJKL2oMZm4FslAp8mVU94waSHl6-qwAgvJcJ7UMyhRGp.jpg?size=720x578&quality=96&type=album" style="width:100%">
+              </div>
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br>
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1)"></span> 
+      <span class="dot" onclick="currentSlide(2)"></span> 
+      <span class="dot" onclick="currentSlide(3)"></span> 
+    </div>
+    <script>
+      var slideIndex = 1;
+      showSlides(slideIndex);
+      
+      function plusSlides(n) {
+        showSlides(slideIndex += n);
+      }
+      
+      function currentSlide(n) {
+        showSlides(slideIndex = n);
+      }
+      
+      function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {slideIndex = 1}    
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";  
+        dots[slideIndex-1].className += " active";
+      }
+    </script>
+</body>
 </html>
